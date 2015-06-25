@@ -23,27 +23,76 @@
         <div class="header clearfix">
             <nav>
                 <ul class="nav nav-tabs pull-right">
-                    <li role="presentation" class="active"><a href="#">首頁</a></li>
-                    <li role="presentation"><a href="#">婚紗剪影</a></li>
-                    <li role="presentation"><a href="#">喜宴資訊</a></li>
-                    <li role="presentation"><a href="#">關於我們</a></li>
+                    <li role="presentation" class="active"><a href="#main">首頁</a></li>
+                    <li role="presentation"><a href="#photo">婚紗剪影</a></li>
+                    <li role="presentation"><a href="#place">喜宴資訊</a></li>
+                    <li role="presentation"><a href="#about">關於我們</a></li>
                 </ul>
             </nav>
             <h3 class="text-muted">Wedding 9.19</h3>
         </div>
-        <div class="jumbotron">
+        <section id="section_main" class="jumbotron">
             <h1>我們要結婚了</h1>
-            <div class="avatar"></div>
+            <div class="avatar">
+            </div>
             <p class="lead">感謝 神！我們終於找到可以依靠一輩子的<span>(長期飯票)</span>室友，衷心邀請您在喜宴當日一同來分享我們的喜悅！</p>
-            <p><a class="btn btn-lg btn-success" href="#" role="button">我要報名！</a></p>
-        </div>
+            <p><a class="btn btn-lg btn-success" target="_blank" href="#" role="button">我要報名！</a></p>
+        </section>
+        <section id="section_photo" style="display:none">
+            <h3>敬請期待</h3>
+        </section>
+        <section id="section_place" style="display:none">
+            <h3>喜宴時間</h3>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 lunch-time">
+                    <p>2015.09.19(六) 12:30 京采飯店 一樓 王黃府喜宴 準時開始</p>
+                </div>
+            </div>
+            <h3>飯店資訊</h3>
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <h4><a href="http://www.splendor-tp.com.tw/">京采飯店</a></h4>
+                    <address>
+                        <strong>喜宴地址</strong>
+                        <p>新北市新店區北新路三段207號</p>
+                    </address>
+                    <address>
+                        <strong>搭乘捷運</strong>
+                        <p>新店綠線大坪林捷運站 4 號出口
+                            <br>背對出口右前方馬路斜對面
+                            <br>
+                        </p>
+                    </address>
+                    <address>
+                        <strong>開車前往</strong>
+                        <p>請由民權路 42 巷進入
+                            <br> 前往飯店地下停車場
+                            <br> 並請於喜宴結束前領取停車代幣
+                            <br>
+                        </p>
+                    </address>
+                </div>
+                <div class="col-md-8 col-sm-8">
+                    <img src="img/map.png" class="img-responsive img-thumbnail" alt="地圖資訊">
+                </div>
+            </div>
+            <h4>Google 地圖</h4>
+            <div class="row">
+                <div class="map"></div>
+            </div>
+        </section>
+        <section id="section_about" style="display:none">
+            <h3>敬請期待</h3>
+        </section>
         <footer class="footer">
-            <p>Wedding Ceremony &copy; 19 Sept. 2015</p>
+            <p>Wedding Ceremony &copy; 19 September 2015</p>
         </footer>
     </div>
     <!-- /container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/jquery.tinyMap.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
