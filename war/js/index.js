@@ -69,9 +69,9 @@ function show_photo() {
 }
 
 function buildPhotoDom(photo) {
-    var photoDom = '<li class="col-xs-3"><span>' + photo.date + '</span>';
+    var photoDom = '<li class="col-sm-3 col-xs-6"><span>' + photo.date + '</span>';
     photoDom += '<a href="' + photo.file + '" title="' + photo.title + '" data-gallery>';
-    photoDom += '<img src="' + photo.thumb + '" alt="' + photo.date + '" class="img-responsive img-rounded">';
+    photoDom += '<img src="' + photo.thumb + '" alt="' + photo.date + '" class="img-responsive img-thumbnail">';
     photoDom += '</a></li>';
 
     return photoDom;
