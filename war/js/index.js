@@ -21,12 +21,19 @@ function url_behavior() {
 
     $('section').hide();
     $('section#section_' + hashCode).show();
-    $('ul.nav li').each(function() {
-        $(this).removeClass('active');
-        if ($(this).children('a').attr('href') === ('#' + hashCode)) {
-            $(this).addClass('active');
-        }
-    });
+
+    if (hashCode === 'main') {
+        $('ul.nav li').removeClass('active');
+        $('li#main_menu').addClass('active');
+    } else {
+        $('ul.nav li').each(function() {
+            $(this).removeClass('active');
+            if ($(this).children('a').attr('href') === ('#' + hashCode)) {
+                $(this).addClass('active');
+            }
+        });
+    }
+
 
 }
 
