@@ -15,16 +15,19 @@ function url_change() {
 
 function url_behavior() {
     var hashCode = location.hash.slice(1);
-    if (hashCode != '') {
-        $('section').hide();
-        $('section#section_' + hashCode).show();
-        $('ul.nav li').each(function() {
-            $(this).removeClass('active');
-            if ($(this).children('a').attr('href') === ('#' + hashCode)) {
-                $(this).addClass('active');
-            }
-        });
+    if (hashCode == '') {
+        hashCode = 'main';
     }
+
+    $('section').hide();
+    $('section#section_' + hashCode).show();
+    $('ul.nav li').each(function() {
+        $(this).removeClass('active');
+        if ($(this).children('a').attr('href') === ('#' + hashCode)) {
+            $(this).addClass('active');
+        }
+    });
+
 }
 
 function init_map() {
