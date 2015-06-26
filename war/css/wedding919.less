@@ -1,5 +1,13 @@
 /* Space out content a bit */
 
+@font-face {
+    font-family: 'cwTeXHei';
+    font-style: normal;
+    font-weight: 500;
+    src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+    src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+}
+
 body {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -73,6 +81,21 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+.nav, section {
+    font-family: 'cwTeXHei', serif;
+}
+
+.male {
+    color: #2196F3;
+}
+
+.female {
+    color: #ff69b4;
+}
+
+.heart {
+    color: #AAA;
+}
 
 .jumbotron {
     padding-top: 10px;
@@ -83,7 +106,7 @@ body {
     .lead {
         span {
             text-decoration: line-through;
-            font-size: 0.8em;
+            font-size: 0.7em;
         }
     }
 }
@@ -101,7 +124,7 @@ body {
         text-align: center;
     }
     li {
-        display:inline-block;
+        display: inline-block;
         text-align: center;
         margin-bottom: 20px;
         span {
@@ -126,6 +149,23 @@ body {
     }
     address {
         font-size: 1.1em;
+    }
+}
+
+#section_about {
+    .row img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    p {
+        font-size: 1.1em;
+        span {
+            text-decoration: line-through;
+            font-size: 0.8em;
+        }
+    }
+    .slogan-center {
+        text-align: center;
     }
 }
 /* Responsive: Portrait tablets and up */

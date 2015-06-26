@@ -2,9 +2,11 @@
 
 $(function() {
     show_photo();
+    photo_fullview();
     url_behavior();
     url_change();
     init_map();
+    countdown();
 });
 
 function url_change() {
@@ -69,10 +71,33 @@ function show_photo() {
 function buildPhotoDom(photo) {
     var photoDom = '<li class="col-xs-3">';
     photoDom += '<a href="' + photo.file + '" title="' + photo.title + '" data-gallery>';
-    photoDom += '<img src="' + photo.thumb + '" alt="' + photo.date + '" class="img-responsive">';
+    photoDom += '<img src="' + photo.thumb + '" alt="' + photo.date + '" class="img-responsive img-rounded">';
     photoDom += '</a><span>' + photo.date + '</span></li>';
 
     return photoDom;
+}
+
+function photo_fullview() {
+    $('.photo_fullview').on('change', function(e) {
+        if ($(this).is(":checked")) {
+            $('#blueimp-gallery').removeAttr('data-use-bootstrap-modal');
+            $('#blueimp-gallery').addClass('blueimp-gallery-controls');
+            $('#blueimp-gallery').data('useBootstrapModal', false);
+        } else {
+            $('#blueimp-gallery').attr('data-use-bootstrap-modal', 'true');
+            $('#blueimp-gallery').removeClass('blueimp-gallery-controls');
+            $('#blueimp-gallery').data('useBootstrapModal', true);
+
+        }
+    });
+}
+
+function countdown() {
+    $("#getting-started").countdown("2015/09/19 12:00:00", function(event) {
+        $(this).text(
+            event.strftime('再過 %D 天 %H 時 %M 分 %S 秒')
+        );
+    });
 }
 
 function formatDate(d) {

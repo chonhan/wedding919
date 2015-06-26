@@ -15,8 +15,10 @@
     <link rel="icon" href="favicon.ico">
     <title>Wedding 9.19 - 我們要結婚了！</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
     <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/wedding919.css">
 </head>
 
@@ -34,17 +36,21 @@
             <h3 class="text-muted">Wedding 9.19</h3>
         </div>
         <section id="section_main" class="jumbotron">
+            <h5 id="getting-started"></h5>
             <h1>我們要結婚了</h1>
             <div class="avatar">
             </div>
+            <h2><span class="male">崇翰</span> <i class="fa fa-diamond heart"></i> <span class="female">詩雯</span></h2>
             <p class="lead">感謝 神！我們終於找到可以依靠一輩子的<span>(長期飯票)</span>室友，衷心邀請您在喜宴當日一同來分享我們的喜悅！</p>
             <p><a class="btn btn-lg btn-success" target="_blank" href="#" role="button">我要報名！</a></p>
         </section>
         <section id="section_photo" style="display:none">
+            <div class="pull-right">
+                <input type="checkbox" class="photo_fullview" data-toggle="toggle" data-on="全屏瀏覽" data-off="一般瀏覽" data-onstyle="success" data-offstyle="default" data-width="100">
+            </div>
             <h3>婚紗剪影</h3>
             <div class="row">
                 <div id="links">
-
                 </div>
             </div>
             <p>本區不定時更新唷！</p>
@@ -90,13 +96,55 @@
             </div>
         </section>
         <section id="section_about" style="display:none">
-            <h3>敬請期待</h3>
+            <h3>領銜主演</h3>
+            <div class="row">
+                <div class="col-sm-12 hidden-lg hidden-md">
+                    <img src="../img/couple.jpg" alt="新人" class="img-responsive img-circle">
+                </div>
+                <div class="col-sm-6">
+                    <div class="">
+                        <img alt="新郎倌" src="../img/male.jpg" class="img-responsive img-circle hidden-sm hidden-xs" />
+                        <div class="caption">
+                            <h3 class="male">
+                                新郎倌
+                            </h3>
+                            <p>
+                                討厭麻煩的事情，但是常常很矛盾，這網站的誕生就是如此。好在有個可以管教此人的老大出現，下半輩子應該是可以不要那麼矛盾才對。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="">
+                        <img alt="新娘子" src="../img/female.jpg" class="img-responsive img-circle hidden-sm hidden-xs" />
+                        <div class="caption">
+                            <h3 class="female">
+                                新娘子
+                            </h3>
+                            <p>
+                                人前非常和藹可親，但其實...嗯，即將步入<span>(戀愛的墳墓)</span>婚姻的殿堂，究～竟未來在家中，會以什麼樣的樣貌相夫教子，請讓我們拭目以待。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>衷心期盼各位的到來</h3>
+                </div>
+                <div class="col-sm-12">
+                    <img src="../img/banner.jpg" alt="謝謝各位" class="img-responsive img-rounded">
+                </div>
+                <div class="col-sm-12 slogan-center">
+                    <h3>乾杯！</h3>
+                </div>
+            </div>
         </section>
         <footer class="footer">
             <p>Wedding Ceremony &copy; 19 September 2015</p>
         </footer>
     </div>
-    <div id="blueimp-gallery" class="blueimp-gallery">
+    <div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="true">
         <!-- The container for the modal slides -->
         <div class="slides"></div>
         <!-- Controls for the borderless lightbox -->
@@ -117,11 +165,11 @@
                     <div class="modal-body next"></div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left prev">
-                            <i class="glyphicon glyphicon-chevron-left"></i> Previous
+                            <i class="fa fa-caret-left"></i> Previous
                         </button>
                         <button type="button" class="btn btn-primary next">
                             Next
-                            <i class="glyphicon glyphicon-chevron-right"></i>
+                            <i class="fa fa-caret-right"></i>
                         </button>
                     </div>
                 </div>
@@ -131,8 +179,10 @@
     <!-- /container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
     <script src="js/jquery.tinyMap.min.js"></script>
-    <script src="https://dl.dropboxusercontent.com/u/9780124/wedding919.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="https://dl.dropboxusercontent.com/u/9780124/wedding919/wedding919.js"></script>
     <script src="js/index.js"></script>
     <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
     <script src="js/bootstrap-image-gallery.min.js"></script>
