@@ -1,6 +1,7 @@
 "use strict";
 
 $(function() {
+    show_photo();
     url_behavior();
     url_change();
     init_map();
@@ -14,7 +15,6 @@ function url_change() {
 
 function url_behavior() {
     var hashCode = location.hash.slice(1);
-    console.log('hash:' + hashCode);
     if (hashCode != '') {
         $('section').hide();
         $('section#section_' + hashCode).show();
@@ -34,4 +34,56 @@ function init_map() {
         'sensor': true,
         'language': 'zh‐TW'
     });
+}
+
+function show_photo() {
+    var BreakException = {};
+    var photos = getPhotoData();
+    var photoDom = "";
+    var today = formatDate(new Date());
+
+    try {
+        photos.forEach(function(photo) {
+            if (today < photo.date) {
+                throw BreakException;
+            }
+            photoDom += buildPhotoDom(photo);
+        });
+    } catch (e) {
+        if (e !== BreakException) throw e;
+    }
+
+    $('div#links').html(photoDom);
+}
+
+function buildPhotoDom(photo) {
+    var photoDom = '<li class="col-xs-3">';
+    photoDom += '<a href="' + photo.file + '" title="' + photo.title + '" data-gallery>';
+    photoDom += '<img src="' + photo.thumb + '" alt="' + photo.date + '" class="img-responsive">';
+    photoDom += '</a><span>' + photo.date + '</span></li>';
+
+    return photoDom;
+}
+
+function formatDate(d) {
+    var month = d.getMonth();
+    var day = d.getDate();
+    var year = d.getFullYear();
+
+    year = year.toString();
+
+    month = month + 1;
+    month = month + "";
+
+    if (month.length == 1) {
+        month = "0" + month;
+    }
+
+    day = day + "";
+
+    if (day.length == 1) {
+        day = "0" + day;
+    }
+
+    return year + "-" + month + "-" + day;
 }
