@@ -4,33 +4,35 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
+
 	<servlet>
-		<servlet-name>welcome</servlet-name>
-		<jsp-file>index.html</jsp-file>
+		<servlet-name>Wedding919</servlet-name>
+		<servlet-class>idv.chonhan.Wedding919Servlet</servlet-class>
 	</servlet>
+
 	<servlet>
-		<servlet-name>register</servlet-name>
-		<jsp-file>register.html</jsp-file>
+		<servlet-name>Error</servlet-name>
+		<servlet-class>idv.chonhan.ErrorServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>welcome</servlet-name>
-		<url-pattern>/</url-pattern>
+		<servlet-name>Wedding919</servlet-name>
+		<url-pattern>/apply</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
-		<servlet-name>register</servlet-name>
-		<url-pattern>/apply</url-pattern>
+		<servlet-name>Error</servlet-name>
+		<url-pattern>/error</url-pattern>
 	</servlet-mapping>
 
 	<error-page>
 		<error-code>500</error-code>
-		<location>/</location>
+		<location>/error.html</location>
 	</error-page>
 
 	<error-page>
 		<error-code>404</error-code>
-		<location>/</location>
+		<location>/error.html</location>
 	</error-page>
 
 	<welcome-file-list>
