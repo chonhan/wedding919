@@ -7,7 +7,19 @@ $(function() {
     url_change();
     init_map();
     countdown();
+    setInterval(change_background, 3000);
 });
+
+function change_background() {
+    var MAX_IDX = 2;
+    var filename = 'url(../img/avatar0' + getRandomInt(1, MAX_IDX) + '.png)';
+    console.log(filename);
+    $('.avatar').css("background-image", filename);
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 function url_change() {
     $(window).on('hashchange', function(e) {
@@ -69,7 +81,8 @@ function show_photo() {
 }
 
 function buildPhotoDom(photo) {
-    var photoDom = '<li class="col-sm-3 col-xs-6"><span>' + photo.date + '</span>';
+    var photoDom = '<li class="col-sm-3 col-xs-6"><span><i class="fa fa-camera-retro"></i> ';
+    photoDom += photo.date + '</span><br>';
     photoDom += '<a href="' + photo.file + '" title="' + photo.title + '" data-gallery>';
     photoDom += '<img src="' + photo.thumb + '" alt="' + photo.date + '" class="img-responsive img-thumbnail">';
     photoDom += '</a></li>';
