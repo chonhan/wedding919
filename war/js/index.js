@@ -7,14 +7,17 @@ $(function() {
     url_change();
     init_map();
     countdown();
-    setInterval(change_background, 3000);
+    setInterval(change_background, 3000)
 });
 
 function change_background() {
     var MAX_IDX = 8;
     var filename = 'url(../img/avatar0' + getRandomInt(1, MAX_IDX) + '.png)';
-    console.log(filename);
-    $('.avatar').css("background-image", filename);
+    var image = $('.avatar');
+    image.fadeOut(500, function () {
+        image.css("background-image", filename);
+        image.fadeIn(200);
+    });
 }
 
 function getRandomInt(min, max) {
@@ -69,7 +72,7 @@ function show_photo() {
     try {
         photos.forEach(function(photo) {
             if (today < photo.date) {
-                //throw BreakException;
+                throw BreakException;
             }
             photoDom += buildPhotoDom(photo);
         });
