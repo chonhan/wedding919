@@ -11,7 +11,7 @@ $(function() {
 });
 
 function change_background() {
-    var MAX_IDX = 2;
+    var MAX_IDX = 7;
     var filename = 'url(../img/avatar0' + getRandomInt(1, MAX_IDX) + '.png)';
     console.log(filename);
     $('.avatar').css("background-image", filename);
