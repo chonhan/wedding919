@@ -11,7 +11,7 @@ $(function() {
 });
 
 function change_background() {
-    var MAX_IDX = 7;
+    var MAX_IDX = 8;
     var filename = 'url(../img/avatar0' + getRandomInt(1, MAX_IDX) + '.png)';
     console.log(filename);
     $('.avatar').css("background-image", filename);
@@ -69,7 +69,7 @@ function show_photo() {
     try {
         photos.forEach(function(photo) {
             if (today < photo.date) {
-                throw BreakException;
+                //throw BreakException;
             }
             photoDom += buildPhotoDom(photo);
         });
