@@ -14,9 +14,9 @@ function change_background() {
     var MAX_IDX = 8;
     var filename = 'url(../img/avatar0' + getRandomInt(1, MAX_IDX) + '.png)';
     var image = $('.avatar');
-    image.fadeOut(500, function () {
+    image.fadeOut(300, function () {
         image.css("background-image", filename);
-        image.fadeIn(200);
+        image.fadeIn(300);
     });
 }
 
